@@ -1,7 +1,7 @@
 import pandas
 import numpy as np
 
-data = pandas.read_csv('src/titanic/dataset.csv', index_col='PassengerId')
+data = pandas.read_csv('datasets/titanic.csv', index_col='PassengerId')
 
 # ----- 1 -----
 
