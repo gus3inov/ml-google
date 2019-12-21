@@ -5,7 +5,7 @@ from sklearn.model_selection import cross_val_score
 from sklearn.preprocessing import scale
 import pandas as pd
 
-df = pd.read_csv('datasets/wine.data')
+df = pd.read_csv('datasets/wine/wine.data')
 
 classes = df.iloc[:, 0]
 signs = scale(df.iloc[:, 1:14])
