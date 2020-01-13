@@ -29,7 +29,10 @@ cv2 = KFold(n_splits=5, shuffle=True, random_state=241)
 clf2 = SVC(kernel='linear', C=C_best, random_state=241)
 clf2.fit(X, newsgroups.target)
 
-coefs = abs(clf2.coef_.todense().A1)
-coefs = np.argsort(coefs)
+coefs = clf2.coef_.todense()
+mapped_coefs = np.abs(np.asarray(coefs)).reshape(-1)
+word_indexes = np.argsort(mapped_coefs)[-10:]
 
-print coefs
+words = [feature_mapping[i] for i in word_indexes]
+
+print words
